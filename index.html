@@ -13,6 +13,7 @@
   </head>
 
   <body>
+    <!-- Social Media icons and links at top left corner of the page -->
     <header>
       <div class="social-media">
         <ul>
@@ -30,24 +31,64 @@
               <li class="tab" data-content="articles"><a href="#" class="icon-github">PROJECTS</a></li>
               <li class="tab" data-content="articles"><a href="#" class="icon-mail4">CONTACT</a></li>
             </ul>
+            <img src="img/background3.jpg" class="main-background">
       </nav>
     </header>
+
     <main>
-      <section id="homepage">
-        <img src="img/background3.jpg" class="main-background">
-        <header>
-          <h1 class="icon-info"><span class="sub">0011001 </span><a href="about.html">/ About</a></h1>
-          <h1 class="icon-github"><span class="sub">0011010 </span><a href="projects.html">/ Projects</a></h1>
-          <h1 class="icon-mail4"><span class="sub">0011011 </span><a href="contact.html">/ Contact</a></h1>
-          <h4><span class="description"><a href="about.html">get to know me</h4>
-          <h4><span class="description"><a href="projects.thml">what I've done</h4>
-          <h4><span class="description"><a href="contat.html">get in touch</h4>
-        </header>
+      <!-- Navigation Menu on homepage -->
+      <nav class="sub-nav">
+        <section id="homepage" class="tab-content">
+          <section class="header-group">
+            <h1 class="icon-info"><a href="about.html"><span class="sub">0011001 </span>/ About</a></h1>
+            <h1 class="icon-github"><a href="projects.html"><span class="sub">0011010 </span>/ Projects</a></h1>
+            <h1 class="icon-mail4"><a href="contact.html"><span class="sub">0011011 </span>/ Contact</a></h1>
+            <h4><span class="description">get to know me</h4>
+            <h4><span class="description">what I've done</h4>
+            <h4><span class="description">get in touch</h4>
+          </section>
+        </section>
+      </nav>
+      <!-- Project filter by name -->
+      <section id="projects" class="tab-content">
+        <div>
+          <ul id="filters">
+            <li>
+              <select id="name-filter">
+                <option value="">-- Filter by Name --</option>
+              </select>
+            </li>
+          </ul>
+        </div>
+        <!-- Project listing template -->
+        <article class="template" data-category="placeholder-category">
+          <header>
+            <h1><a href="">Name</a></h1>
+            <div class="byline">
+              By <address>Contributor</address>published<time pubdate datetime="2000-01-01">Publish Time</time>
+            </div>
+          </header>
+          <section class="project-body"></section>
+          <a href="#" class="read-on">Read on &rarr;</a>
+        </article>
+      </section>
+      <!-- About Me and Contact page -->
+      <section id="about" class="tab-content">
+        <header>About Me</header>
+        <section>
+          <h1>I'm Annie</h1>;
+          <p id="tagline">SOMETHING SOMETHING SOMETHING</P>
+            <p id="mySummary">Looking for opportunities to further my passion in software development.</p>
+            <p id="contactMe">Click here to contact me</p>
+          </section>
+
     </main>
-    <footer>
-      &copy; 2017
-    </footer>
+
+    <footer>&copy; 2017 | AT</footer>
+    <!-- Model Files -->
+    <script src="scripts/projectDetails.js" type="text/javascript"></script>
     <script src="scripts/projects.js" type="text/javascript"></script>
-    <script src="scripts/main.js" type="text/javascript"></script>
+    <script src="scripts/projectView.js" type="text/javascript"></script>
+
   </body>
 </html>
