@@ -9,10 +9,30 @@
     <link rel="stylesheet" href="styles/base.css">
     <link rel="stylesheet" href="styles/layout.css">
     <link rel="stylesheet" href="styles/modules.css">
-    <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
+    <script id="project-template" type="text/x-handlebars-template">
+      <article data-name="{{name}}">
+        <header>
+          <h1><a href="{{projectUrl}}">{{name}}</a></h1>
+        <div class="byline">
+          Contributor(s): <address>{{contributor}}</address>  published <time pubdate datetime="">{{publishedOn}}</time>
+        </div>
+        </header>
+        <section class="project-body">{{{body}}}</section>
+        <!-- <a href="#" class="read-on">Read on &rarr;</a> -->
+      </article>
+    </script>
   </head>
 
   <body>
+    <style>
+      body {
+        background: url('img/majk-m.jpg') no-repeat center center fixed;
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
+      }
+    </style>
     <!-- Social Media icons and links at top left corner of the page -->
     <header>
       <div class="social-media">
@@ -26,29 +46,15 @@
         <!-- Hamburger Menu -->
           <div class="icon-menu"></div>
             <ul>
-              <li class="tab" data-content="articles"><a href="#" class="icon-home3">HOME</a></li>
-              <li class="tab" data-content="articles"><a href="#" class="icon-info">ABOUT</a></li>
-              <li class="tab" data-content="articles"><a href="#" class="icon-github">PROJECTS</a></li>
-              <li class="tab" data-content="articles"><a href="#" class="icon-mail4">CONTACT</a></li>
+              <li class="tab" data-content="articles"><a href="#" class="icon-home3"> HOME</a></li>
+              <li class="tab" data-content="articles"><a href="#" class="icon-info"> ABOUT</a></li>
+              <li class="tab" data-content="articles"><a href="#" class="icon-github"> PROJECTS</a></li>
+              <li class="tab" data-content="articles"><a href="#" class="icon-mail4"> CONTACT</a></li>
             </ul>
-            <img src="img/majk-m.jpg" class="main-background">
       </nav>
     </header>
 
     <main>
-      <!-- Navigation Menu on homepage -->
-      <nav class="sub-nav">
-        <section id="homepage" class="tab-content">
-          <section class="header-group">
-            <h1 class="icon-info"><a href="about.html"><span class="sub">0011001 </span>/ About</a></h1>
-            <h1 class="icon-github"><a href="projects.html"><span class="sub">0011010 </span>/ Projects</a></h1>
-            <h1 class="icon-mail4"><a href="contact.html"><span class="sub">0011011 </span>/ Contact</a></h1>
-            <h4><span class="description">get to know me</h4>
-            <h4><span class="description">what I've done</h4>
-            <h4><span class="description">get in touch</h4>
-          </section>
-        </section>
-      </nav>
       <!-- Project filter by name -->
       <section id="projects" class="tab-content">
         <div>
@@ -60,35 +66,26 @@
             </li>
           </ul>
         </div>
-        <!-- Project listing template -->
-        <article class="template" data-category="placeholder-category">
-          <header>
-            <h1><a href="">Name</a></h1>
-            <div class="byline">
-              By <address>Contributor</address>published<time pubdate datetime="2000-01-01">Publish Time</time>
-            </div>
-          </header>
-          <section class="project-body"></section>
-          <a href="#" class="read-on">Read on &rarr;</a>
-        </article>
-      </section>
       <!-- About Me and Contact page -->
       <section id="about" class="tab-content">
-        <header>About Me</header>
-        <section>
-          <h1>I'm Annie</h1>;
-          <p id="tagline">SOMETHING SOMETHING SOMETHING</P>
-            <p id="mySummary">Looking for opportunities to further my passion in software development.</p>
-            <p id="contactMe">Click here to contact me</p>
+        <img id="profile-pic" src="img/profile-pic.jpg"
+        <section id="aboutContent">
+          <h1 class="aboutIntro">Hi! I'm Annie.</h1>
+          <p class="tagLine">Experienced Finance Professional for Tech. Start-up | Current Software Development Student</P>
+            <p class="mySummary">Looking for opportunities to further my passion in software development.</p>
+            <!-- <p class="contactMe">Click here to contact me</p> -->
           </section>
+      </section>
 
     </main>
 
-    <footer>&copy; 2017 | AT</footer>
+    <!-- <footer>&copy; 2017 | AT</footer> -->
     <!-- Model Files -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.4/handlebars.js"></script>
     <script src="scripts/projectDetails.js" type="text/javascript"></script>
     <script src="scripts/projects.js" type="text/javascript"></script>
-    <script src="scripts/projectView.js" type="text/javascript"></script>
+    <script src="scripts/projectsView.js" type="text/javascript"></script>
 
   </body>
 </html>

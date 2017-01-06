@@ -2,6 +2,30 @@
   float: left;
 }
 
+#about{
+  background-color: white;
+  opacity: 0.9;
+  position: absolute;
+  width: 90%;
+  height: 60%;
+  margin: 5%;
+}
+
+.aboutIntro {
+  text-align: center;
+}
+
+p {
+  text-align: center;
+}
+
+#profile-pic {
+  filter:grayscale();
+  border-radius: 160px;
+  width: 10%;
+  margin-left: 45%;
+  margin-top: 3%;
+}
 @media only screen and (min-width: 640px) {
   .heading-group-h1 {
     padding: .1em .1em .1em 2em;

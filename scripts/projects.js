@@ -1,25 +1,17 @@
 var allProjects = [];
 
 function Project(opts) {
-  this.name = opts.name;
-  this.category = opts.category;
-  this.contributor = opts.contributor;
-  this.projectUrl = opts.projectUrl;
-  this.publishedOn = opts.publishedOn;
-  this.body = opts.body;
+  for (key in opts) {
+    this[key] = opts[key];
+  }
 }
 
 Project.prototype.toHtml = function () {
-  var $newProject =$('article.template').clone().removeClass('template');
-
-  $newProject.attr('data-category', this.category);
-  $newProject.find('.byline').text(this.contributor);
-  $newProject.find('h1').text(this.name).attr('href', this.projectUrl);
-  // $newProject.find('h1').attr('href', this.projectUrl);
-  $newProject.find('.project-body').html(this.body);
-  $newProject.find('time[pubdate]').attr('datetime', this.publishedOn);
-  $newProject.find('time').text(' about ' + parseInt((new Date() - new Date(this.publishedOn))/60/60/24/1000) + ' days ago');
-  return $newProject;
+  var source = $('#project-template').html();
+  var templateRender = Handlebars.compile(source);
+  this.daysAgo = parseInt((new Date() - new Date(this.publishedOn))/60/60/24/1000);
+  this.publishStatus = this.publishedOn ? `published ${this.daysAgo} days ago` : '(draft)';
+  return templateRender(this);
 };
 
 sourceData.sort(function(a,b) {

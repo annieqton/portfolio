@@ -19,38 +19,27 @@ projectView.handleNameFilter = function () {
       var $currentProjectName = $(this).val();
       $('article').each(function() {
         if($(this).attr('name') === $currentProjectName) {
-          $(this).show();
+          $(this).fadeIn();
         }
       });
     }else{
-      $('article').show();
+      $('article').fadeIn();
     }
     $('#name-filter').val('');
   });
 };
 
 projectView.handleMainNav = function() {
-  $('main-nav').on('click', '.tab', function(){
-
-    $('.icon-home3').click(function() {
-      $('.tab-content').hide();
-      $('#homepage').fadeIn();
-    });
-
-    $('.icon-info').click(function() {
-      $('.tab-content').hide();
-      $('#about').fadeIn();
-    });
-
-    $('.icon-github').click(function() {
-      $('.tab-content').hide();
-      $('#projects').fadeIn();
-    });
-
+  $('.main-nav').on('click', '.tab', function() {
+    $('.tab-content').hide();
+    $('#' + $(this).data('content')).fadeIn();
   });
+  $('.main-nav .tab:first').click();
 };
 
 
-projectView.populateFilters();
-projectView.handleNameFilter();
-projectView.handleMainNav();
+$(document).ready(function() {
+  projectView.populateFilters();
+  projectView.handleNameFilter();
+  projectView.handleMainNav();
+});
