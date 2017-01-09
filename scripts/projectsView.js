@@ -34,12 +34,7 @@ projectView.handleNameFilter = function () {
 };
 
 projectView.individualProject = function () {
-  $('article').on('click', 'h1', 'a', function() {
-    var elem = $(this);
-    if (elem.is('[href^ = "htpp"]')) {
-      elem.attr('data-name', '_blank');
-    }
-  });
+  $('#projects h1 a').attr('target','_blank');
 };
 
 projectView.handleMainNav = function() {
