@@ -1,11 +1,11 @@
-.site-header {
+/*.site-header {
   background: #FFEAAA;
-}
+}*/
 
-.heading-group-h1 {
+/*.heading-group-h1 {
   float: left;
   padding: 0 0 .2em 1em;
-}
+}*/
 
 .social-media ul {
   padding: 0;
@@ -43,7 +43,7 @@
 .main-nav li {
   margin-right: .4em;
   font-size: 1.5em;
-  padding: .5em .2em;
+  padding: .3em .1em;
   border-bottom: 1px solid #ccc;
 }
 
@@ -53,11 +53,20 @@
 }
 
 .template {
-  display: none;
+  display:none;
 }
 
 #articles {
   padding: 1rem;
+
+}
+
+#projects {
+  display:none;
+}
+
+#about {
+ display:none;
 }
 
 .byline {
@@ -75,11 +84,11 @@
   }
 
   .main-nav {
-    padding: .2em .2em .2em 2em;
+    padding: .1em .1em .1em 1em;
   }
 
   .main-nav ul {
-    display: none;
+    display: block;
   }
 
   .main-nav ul li {

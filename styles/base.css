@@ -5,13 +5,15 @@ img {
 body {
   line-height: 1.5;
   font-size: 100%;
-  color: #313131;
+  color: #1C2833;
 }
 
 article {
   border-bottom: 2px solid black;
   margin: 0 2.5%;
   padding: 2% 0;
+  background-color: white;
+  opacity: 0.9;
 }
 
 /*TEXT STYLES
