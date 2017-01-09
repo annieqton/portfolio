@@ -58,6 +58,15 @@
 
 #articles {
   padding: 1rem;
+
+}
+
+#projects {
+  display:none;
+}
+
+#about {
+ display:none;
 }
 
 .byline {
