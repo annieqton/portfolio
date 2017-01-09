@@ -4,6 +4,8 @@
     <meta charset="utf-8">
     <title>Portfolio</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://fonts.googleapis.com/css?family=Rasa" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Sacramento" rel="stylesheet">
     <link rel="stylesheet" href="vendor/styles/normalize.css">
     <link rel="stylesheet" href="vendor/icons.css">
     <link rel="stylesheet" href="styles/base.css">
@@ -15,11 +17,10 @@
         <header>
           <h1><a href="{{projectUrl}}">{{name}}</a></h1>
         <div class="byline">
-          Contributor(s): <address>{{contributor}}</address>  published <time pubdate datetime="">{{publishedOn}}</time>
+          Contributor: <address>{{contributor}}</address>  Created: <time pubdate datetime="">{{publishedOn}}</time>
         </div>
         </header>
         <section class="project-body">{{{body}}}</section>
-        <!-- <a href="#" class="read-on">Read on &rarr;</a> -->
       </article>
     </script>
   </head>
@@ -37,6 +38,7 @@
     <!-- Social Media icons and links at top left corner of the page -->
     <header>
       <div class="social-media">
+        <div class="topBar">AT</div>
         <ul>
           <li class="icon"><a href="https://www.facebook.com/" class="icon-facebook2"></a></li>
           <li class="icon"><a href="https://twitter.com/" class="icon-twitter"></a></li>
@@ -50,7 +52,7 @@
               <li class="tab" data-content="about"><a href="#" class="icon-home3"> HOME</a></li>
               <li class="tab" data-content="about"><a href="#" class="icon-info"> ABOUT</a></li>
               <li class="tab" data-content="projects"><a href="#" class="icon-github"> PROJECTS</a></li>
-              <!-- <li class="tab" data-content="articles"><a href="#" class="icon-mail4"> CONTACT</a></li> -->
+              <li class="tab" data-content="articles"><a href="#" class="icon-mail4"> CONTACT</a></li>
             </ul>
       </nav>
     </header>
@@ -72,12 +74,16 @@
       <section id="about" class="tab-content">
         <img id="profile-pic" src="img/profile-pic.jpg" />
         <section id="aboutContent">
-          <h1 class="aboutIntro">Hi! I'm Annie.</h1>
+          <h1 class="aboutIntro">I'M ANNIE</h1>
           <p class="tagLine">Experienced Finance Professional for Tech. Start-up | Current Software Development Student</p>
           <p class="mySummary">Looking for opportunities to further my passion in software development.</p>
+          <section class="contactMe">GET IN TOUCH</section>
           <!-- <p class="contactMe">Click here to contact me</p> -->
         </section>
       </section>
+      <!-- <section id="contactInfo">
+      <p>Email: <a href="annieqton@gmail.com">annieqton@gmail.com</a></p>
+      </section> -->
 
     </main>
 

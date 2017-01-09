@@ -11,6 +11,7 @@
   padding: 0;
   float: left;
   margin-left: 1em;
+  margin-bottom: 2em;
   list-style: none;
   clear: both;
 }
@@ -23,10 +24,13 @@
 .icon-menu {
   font-size: 3em;
   float: right;
+  margin: -55px 5px 0px 0px;
+  filter:invert(1);
 }
 
 .main-nav {
   padding: 0.1em;
+  /*display: inline;*/
 }
 
 .main-nav ul {
@@ -99,5 +103,4 @@
   .main-nav ul li:hover a {
     color: #29506D;
   }
-
 }
