@@ -64,6 +64,7 @@ p {
   margin-top:5%;
   float: right;
 }
+
 @media only screen and (min-width: 640px) {
   .heading-group-h1 {
     padding: .1em .1em .1em 2em;

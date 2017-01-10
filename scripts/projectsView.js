@@ -1,4 +1,6 @@
-var projectView = {};
+'use strict'
+
+const projectView = {};
 
 projectView.populateFilters = function() {
   $('article').not('.template').each(function(){
@@ -45,10 +47,14 @@ projectView.handleMainNav = function() {
   $('.main-nav .tab:first').click();
 };
 
+projectView.initIndexPage = function () {
+  Project.all.forEach(function(a) {
+    $('#projects').append(a.toHtml())
+  });
 
-$(document).ready(function() {
+
   projectView.populateFilters();
   projectView.handleNameFilter();
   projectView.individualProject();
   projectView.handleMainNav();
-});
+};
