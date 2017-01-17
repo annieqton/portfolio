@@ -17,10 +17,11 @@
 #about{
   background-color: white;
   opacity: 0.9;
-  position: absolute;
-  width: 90%;
-  height: 60%;
-  margin: 5%;
+  position: relative;
+  width: 80%;
+  height: 70%;
+  margin: 0 auto;
+  margin-top: 15%;
 }
 
 #aboutContent {
@@ -34,20 +35,31 @@
 .aboutIntro {
   font-weight: 700;
   font-size: 30px;
-  margin-top: 15%;
+  width: 60%;
+  position: absolute;
+  font-family: 'Zeyada', cursive;
 }
 
 .tagLine {
-  font-size: 23px;
+  font-size: 1em;
+  width: 100%;
+  display: inline-block;
+  margin-top: 30%;
 }
 
 .mySummary {
-
+  font-size: 1em;
+  width: 100%;
+  font-size: 1em;
+  display: inline-block;
 }
 
 .contactMe {
   text-align: center;
-  width: 30%;
+  margin-left: 10%;
+  margin-right: 10%;
+  margin-bottom: 5%;
+  width: 50%;
   background-color: #EBEDEF;
   border-color: #B9BBBD;
   border-style: solid;
