@@ -40,13 +40,14 @@
     $('#projects h1 a').attr('target','_blank');
   };
 
-  projectView.handleMainNav = function() {
-    $('.main-nav').on('click', '.tab', function() {
-      $('.tab-content').hide();
-      $('#' + $(this).data('content')).show();
-    });
-    $('.main-nav .tab:first').click();
-  };
+// Disable this code block since the routes are handling '/' and '/about'
+  // projectView.handleMainNav = function() {
+  //   $('.main-nav').on('click', '.tab', function() {
+  //     $('.tab-content').hide();
+  //     $('#' + $(this).data('content')).show();
+  //   });
+  //   $('.main-nav .tab:first').click();
+  // };
 
   projectView.initIndexPage = function () {
     Project.all.forEach(function(a) {

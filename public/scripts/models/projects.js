@@ -25,17 +25,6 @@
     Project.all = rows.map(row => new Project(row));
   };
 
-// OLD CODES:
-// Project.loadAll = function(sourceData) {
-//   sourceData.sort(function(a,b) {
-//     return(new Date(b.publishedOn)) - (new Date(a.publishedOn));
-//   });
-//
-//   sourceData.forEach(function(ele) {
-//     Project.all.push(new Project(ele));
-//   })
-// }
-
 // This function will retrieve the data from either a local or remote source,
 // and process it, then hand off control to the View.
   Project.fetchAll = function () {
