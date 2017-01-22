@@ -60,7 +60,3 @@ Session.vim
 # temporary
 .netrwhist
 *~
-
-# auto-generated tag files
-tags
-githubToken.js
