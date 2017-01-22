@@ -58,8 +58,9 @@
     projectView.populateFilters();
     projectView.handleNameFilter();
     projectView.individualProject();
-    projectView.handleMainNav();
+    // projectView.handleMainNav();
   };
 
+  // Project.fetchall(projectsView.initIndexPage);
   module.projectView = projectView;
 })(window);

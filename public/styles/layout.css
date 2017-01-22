@@ -11,7 +11,14 @@
   font-weight: bolder;
   font-size: 37px;
   padding-left: 20px;
+}
 
+#projects {
+  margin: 15% 5% 0 5%;
+  padding: 5%;
+  background-color: white;
+  opacity: 0.9;
+  position: absolute;
 }
 
 #about{
@@ -54,15 +61,12 @@
   display: inline-block;
 }
 
-.contactMe {
+.button {
   text-align: center;
   margin-left: 10%;
   margin-right: 10%;
   margin-bottom: 5%;
-  width: 50%;
   background-color: #EBEDEF;
-  border-color: #B9BBBD;
-  border-style: solid;
 }
 
 p {

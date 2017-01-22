@@ -25,6 +25,20 @@
         <section class="project-body">{{{body}}}</section>
       </article>
     </script>
+
+      <script id="repo-template" type="text/x-handlebars-template">
+        <li>
+          <a href="{{html_url}}" target="_blank"><h3>Project Name: {{name}}</h3></a>
+          <p>Description: {{description}}</p>
+          <p>Language: {{language}}</p>
+          <p>Created: {{created_at}}</p>
+          <p>Last updated: {{updated_at}}</p>
+            {{#if watchers_count}}
+              <p>{{watchers_count}} watching this repo</p>
+            {{/if}}
+        </li>
+      </script>
+
   </head>
 
   <body>
@@ -52,10 +66,10 @@
         <!-- Hamburger Menu -->
           <div class="icon-menu"></div>
             <ul>
-              <li class="tab" data-content="about"><a href="/" class="icon-home3"> HOME</a></li>
+              <li class="tab" data-content="articles"><a href="/" class="icon-home3"> HOME</a></li>
               <li class="tab" data-content="about"><a href="/about" class="icon-info"> ABOUT</a></li>
-              <li class="tab" data-content="projects"><a href="_blank" class="icon-github"> PROJECTS</a></li>
-              <li class="tab" data-content="articles"><a href="_blank" class="icon-mail4"> CONTACT</a></li>
+              <li class="tab" data-content="projects"><a href="/projects" class="icon-github"> PROJECTS</a></li>
+              <li class="tab"><a href="https://www.google.com/gmail/" class="icon-mail4"> CONTACT</a></li>
             </ul>
       </nav>
     </header>
@@ -78,10 +92,9 @@
         <img id="profile-pic" src="img/profile-pic.jpg" />
         <section id="aboutContent">
           <h1 class="aboutIntro">Hi, I'm Annie.</h1>
-          <p class="tagLine">I am current Software Development student.  Prior to this, I was a Finance Professional for technology start-up company.</p>
+          <p class="tagLine">I am currently a Software Development student.  Prior to this, I was a Finance Professional for technology start-up companies.</p>
           <p class="mySummary">I am always open to new opportunities to further my passion in software development.</p>
-          <section class="contactMe">GET IN TOUCH</section>
-          <!-- <p class="contactMe">Click here to contact me</p> -->
+          <button class="button">GET IN TOUCH</button>
         </section>
       <!-- </section>
       <section id="contactInfo">
@@ -93,14 +106,21 @@
     <!-- <footer>&copy; 2017 | AT</footer> -->
     <!-- Model Files -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.4/handlebars.js"></script>
+    <script src="/vendor/scripts/handlebars.js"></script>
     <script src="/vendor/scripts/marked.js"></script>
     <script src="/vendor/scripts/page.js"></script>
 
-    <script type="text/javascript" src="/scripts/models/projects.js"></script>
-    <script type="text/javascript" src="/scripts/views/projectsView.js"></script>
-    <script type="text/javascript" src="/scripts/controllers/aboutController.js"></script>
-    <script type="text/javascript" src="/scripts/controllers/projectController.js"></script>
+  <!-- Your secret GitHub token file should be gitingore'd, therefore recreated on every developer's environment. -->
+    <script src="/scripts/models/githubToken.js"></script>
+
+  <!-- Script files for the Article resource: -->
+    <script src="/scripts/models/projects.js"></script>
+    <script src="/scripts/views/projectsView.js"></script>
+    <script src="/scripts/controllers/projectController.js"></script>
+
+    <script src="/scripts/models/repo.js"></script>
+    <script src="/scripts/views/repoView.js"></script>
+    <script src="/scripts/controllers/aboutController.js"></script>
     <script src="/scripts/controllers/routes.js"></script>
 
     </script>
