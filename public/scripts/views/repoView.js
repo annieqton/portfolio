@@ -6,7 +6,7 @@
   const ui = function() {
     let $projects = $('#projects');
 
-    $projects.find('ul').empty();
+    $projects.find('ul').show();
     $projects.show().siblings().hide();
   };
 

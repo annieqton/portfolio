@@ -7,11 +7,12 @@
     $('#projects').show().siblings().hide();
     repos.requestRepos(repoView.index);
 
-    // Project.fetchAll(projectView.initIndexPage);
+    projectView.index();
 
     $('main > section').hide();
     $('#projects').show();
   };
+
 
   module.projectController = projectController;
 })(window);
