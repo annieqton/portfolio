@@ -25,21 +25,13 @@
     Project.all = rows.map(row => new Project(row));
   };
 
-// This function will retrieve the data from either a local or remote source,
-// and process it, then hand off control to the View.
   Project.fetchAll = function () {
     if(localStorage.sourceData) {
       Project.loadAll(JSON.parse(localStorage.sourceData));
-      projectView.initIndexPage();
     } else {
-    //When we don't already have the sourceData, we need to retrieve the JSON file from the server with AJAX
       $.getJSON('data/projectDetails.json').then(function(sourceData) {
-    // cache it in localStorage so we can skip the server call next time,
         localStorage.setItem('projectDetails', JSON.stringify(sourceData));
-    // then load all the data into Project.all with the .loadAll function above
         Project.loadAll(sourceData);
-        // and then render the index page.
-        projectView.initIndexPage();
       });
     }
   };

@@ -4,35 +4,23 @@
   const projectView = {};
 
   projectView.populateFilters = function() {
-    $('article').not('.template').each(function(){
-
-      var projectName;
-      projectName = $(this).find('h1 a').text();
-
-      var optionTag;
-      optionTag = '<option value="' + projectName +'">' + projectName + '</option>';
-
-      $('#name-filter').append(optionTag);
-
-      if($('#name-filter option[value="' + projectName +'"]').length === 0) {
-        $('#name-filter').append(optionTag);
-      }
+    var options;
+    var template = Handlebars.compile($('#option-template').text());
+    options = Project.projectName()
+    .map(function(name) {
+      return template({val: name});
     });
+    $('#name-filter').append(options);
   };
 
-  projectView.handleNameFilter = function () {
-    $('#name-filter').on('change', function(){
-      if($(this).val()) {
-        $('article').hide();
-        var $currentProjectName = $(this).val();
-        $('article').each(function() {
-          if($(this).data('name') === $currentProjectName) {
-            $(this).fadeIn();
-          }
-        });
-      }else{
-        $('article').fadeIn();
-      }
+  projectView.handleFilters = function() {
+    $('#filters').on('change', 'select', function() {
+      var resource = this.id.replace('-filter', '');
+      $(this).parent().siblings().children().val('');
+      page('/' + resource + '/' +
+        // Replace any/all whitespace with a '+' sign
+        $(this).val().replace(/\W+/g, '+')
+      );
     });
   };
 
@@ -40,27 +28,14 @@
     $('#projects h1 a').attr('target','_blank');
   };
 
-// Disable this code block since the routes are handling '/' and '/about'
-  // projectView.handleMainNav = function() {
-  //   $('.main-nav').on('click', '.tab', function() {
-  //     $('.tab-content').hide();
-  //     $('#' + $(this).data('content')).show();
-  //   });
-  //   $('.main-nav .tab:first').click();
-  // };
-
-  projectView.initIndexPage = function () {
-    Project.all.forEach(function(a) {
-      $('#projects').append(a.toHtml())
-    });
+    projectView.index = function() {
+    $('#projects').show().siblings().hide();
 
 
     projectView.populateFilters();
-    projectView.handleNameFilter();
+    projectView.handleFilter();
     projectView.individualProject();
-    // projectView.handleMainNav();
   };
 
-  // Project.fetchall(projectsView.initIndexPage);
   module.projectView = projectView;
 })(window);

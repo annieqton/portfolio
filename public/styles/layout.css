@@ -1,85 +1,23 @@
-.pull-left {
-  float: left;
+.clearfix::after {
+  content: "";
+  display: table;
+  clear: both;
 }
 
-.topBar {
-  width: auto;
-  height: 10%;
-  background-color: #557EA4;
-  color: #DFE5E9;
-  font-family: 'Sacramento', cursive;
-  font-weight: bolder;
-  font-size: 37px;
-  padding-left: 20px;
+.heading-group-h1 {
+  max-width: 80%;
 }
 
-#projects {
-  margin: 15% 5% 0 5%;
-  padding: 5%;
-  background-color: white;
-  opacity: 0.9;
-  position: absolute;
+#filters select {
+  width: 90%;
+  margin: .2em 5%;
 }
 
-#about{
-  background-color: white;
-  opacity: 0.9;
-  position: relative;
-  width: 80%;
-  height: 70%;
-  margin: 0 auto;
-  margin-top: 15%;
-}
-
-#aboutContent {
- width: 70%;
- margin-left: 5%;
- margin-top: 5%;
- font-family: 'Rasa', serif;
- text-align: left;
-}
-
-.aboutIntro {
-  font-weight: 700;
-  font-size: 30px;
-  width: 60%;
-  position: absolute;
-  font-family: 'Zeyada', cursive;
-}
-
-.tagLine {
-  font-size: 1em;
-  width: 100%;
-  display: inline-block;
-  margin-top: 30%;
-}
-
-.mySummary {
-  font-size: 1em;
-  width: 100%;
-  font-size: 1em;
+#filters li {
+  width: 20em;
   display: inline-block;
 }
 
-.button {
-  text-align: center;
-  margin-left: 10%;
-  margin-right: 10%;
-  margin-bottom: 5%;
-  background-color: #EBEDEF;
-}
-
-p {
-  text-align: left;
-}
-
-#profile-pic {
-  border-radius: 160px;
-  width: 20%;
-  margin-right: 5%;
-  margin-top:5%;
-  float: right;
-}
 
 @media only screen and (min-width: 640px) {
   .heading-group-h1 {
